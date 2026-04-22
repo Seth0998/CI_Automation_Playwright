@@ -1,7 +1,7 @@
 import { test, expect } from '@playwright/test';
 import { readExcel } from '../Utils/excelReader';
 
-const testData = readExcel('users.xlsx', 'Users') as any[];
+const testData = readExcel('Users.xlsx', 'Users') as any[];
 
 test.describe('Login with Excel Data', () => {
 
