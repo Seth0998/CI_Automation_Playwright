@@ -11,7 +11,6 @@ export class PostageVisionPage {
 
     // Locators
     this.postageVisionOption = page.locator("//div[text()='Postage Vision']");
-
     this.detailsTab = page.locator("//li[@id='pstDetails']//a[text()='Details']");
     this.firstRowDate = page.locator("//tbody/tr[1]/td[@data-field='dateOfPostage']");
   }
@@ -24,7 +23,7 @@ export class PostageVisionPage {
 
     await this.postageVisionOption.click();
   }
-//Methos to click Details Tab
+  //Method to click Details Tab
   async clickDetailsTab() {
     await this.page.waitForLoadState('networkidle');
 
@@ -32,7 +31,7 @@ export class PostageVisionPage {
 
     await this.detailsTab.click();
   }
-
+  //Method to compare Logic
   async getFirstRecordDate(): Promise<string> {
     await this.firstRowDate.waitFor({ state: 'visible' });
     return (await this.firstRowDate.textContent())?.trim() || '';
